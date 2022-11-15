@@ -1,0 +1,77 @@
+body {
+  background-color: #141414;
+  color: #ffffff;
+}
+
+.movie-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.movie {
+  margin: 1rem;
+  position: relative;
+  width: 200px;
+  border-radius: 3px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+.movie-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+.movie-info h3 {
+  margin: 0;
+}
+.movie-over {
+  position: absolute;
+  background-color: #fff;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  box-shadow: 0 -3px 5px rgba(0, 0, 0, 0.1);
+  color: #141414;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  overflow: auto;
+  max-height: 100%;
+  transform: translateY(102%);
+  transition: 0.3s ease-in-out;
+  text-decoration: none;
+}
+.movie:hover .movie-over {
+  transform: translateY(0%);
+}
+.filter {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  margin-top: 10px;
+}
+.star {
+  margin-right: 18%;
+}
+.heading {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 50px;
+  background-color: gray;
+}
+.movie-add {
+  text-decoration: none;
+  margin-top: 25px;
+}
+.movie-add Button{
+  color:#ffffff;
+  background-color: #141414;
+}
+.btn{
+  background-color: gray;
+  color: #ffffff;
+  border-color: gray;
+  margin-top: 2px;
+  cursor: pointer;
+}
