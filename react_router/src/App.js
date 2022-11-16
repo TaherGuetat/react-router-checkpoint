@@ -26,7 +26,7 @@ function App() {
         "https://m.media-amazon.com/images/M/MV5BOTk5ODg0OTU5M15BMl5BanBnXkFtZTgwMDQ3MDY3NjM@._V1_QL50_SY1000_CR0,0,674,1000_AL_.jpg",
       rating: 6.8,
       id: 0,
-      trailer:"https://www.youtube.com/watch?v=WDkg3h8PCVU",
+      trailer:"https://www.youtube.com/embed/WDkg3h8PCVU",
     },
     {
       title: "The white lotus",
@@ -36,7 +36,7 @@ function App() {
         "https://m.media-amazon.com/images/M/MV5BOWY1YjY1MWUtYWY5Yi00YTM4LTkyM2UtMDQ3NmFiYTkyYjlkXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_.jpg",
       rating: 7.6,
       id: 1,
-      trailer:"https://www.youtube.com/watch?v=TGLq7_MonZ4",
+      trailer:"https://www.youtube.com/embed/TGLq7_MonZ4",
     },
   ]);
   const handleAdd = (newMovie) => {
@@ -71,7 +71,7 @@ function App() {
           }
         ></Route>
 
-        <Route path="/trailer/:id" element={<MovieTrailer />} />
+        <Route path="/trailer/:id" element={<MovieTrailer movieList={movieList}/>} />
       </Routes>
     </div>
   );

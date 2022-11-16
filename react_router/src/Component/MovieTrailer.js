@@ -1,43 +1,20 @@
-import { useState } from 'react';
-import ReactPlayer from 'react-player';
-import movieTrailer from 'movie-trailer';
+import { useParams } from "react-router-dom";
 
+export const MovieTrailer = ({ movieList }) => {
+  const { id } = useParams();
 
-export const MovieTrailer = () => {
-  const [video, setVideo] = useState("aquaman");
-  const [videoURL, setVideoURL] = useState("https://youtube/");
-
-  const handleSearch = () => {
-    movieTrailer(video).then((res) => {
-      setVideoURL(res);
-    });
-  };
-
-
-
-
+  const movie = movieList.find((el) => el.id == id);
   return (
     <div>
-      <div className="search-box">
-        <label>Search for any movies/shows: </label>
-        <input
-          type="text"
-          onChange={(e) => {
-            setVideo(e.target.value);
-          }}
-        />
-
-        <button
-          onClick={() => {
-            handleSearch();
-          }}
-        >
-          Search
-        </button>
-      </div>
-
-      <ReactPlayer url={videoURL} controls={true} />
+      <iframe
+        width="560"
+        height="315"
+        src={movie.trailer}
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
     </div>
-  
   );
 };
